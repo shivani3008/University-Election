@@ -1,0 +1,23 @@
+﻿html, body {
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.width_100 {
+    width: 100%;
+}
+.width_50 {
+    width: 50%;
+}
+.font_gray {
+    color: gray;
+}
+.align_right {
+    text-align: right;
+}
+.button-collapse {
+  color: #26a69a;
+}
+.padding_10 {
+    padding-left: 100px !important;
+}

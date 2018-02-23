@@ -1,0 +1,73 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ad_masterpage_after.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>University Election</title>
+    <asp:ContentPlaceHolder id="head" runat="server">    
+    </asp:ContentPlaceHolder>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- CSS  -->
+    <link href="./Lib/css/materialize.css" rel="stylesheet" type="text/css" />
+    <link href="./Lib/css/materialize.min.css" rel="stylesheet" type="text/css"/>
+    <link href="./Lib/css/style_sheet.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Icons  -->
+    <link href="./Lib/icons/materialize-icons.css" rel="stylesheet"/>
+
+    <!-- Js Jquery -->
+    <script src="./Lib/jquery/jquery.min.js" type="text/javascript"></script>           
+    <script src="./Lib/js/materialize.min.js" type="text/javascript"></script>
+  
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.button-collapse').sideNav();
+
+            $('.button-collapse').sideNav({
+                edge: 'right'
+            });
+
+            //to change Active class
+            $('.nav-wrapper ul li').click(function () {
+                $(this).siblings('li').removeClass('active');
+                $(this).addClass('active');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <nav role="navigation" class="teal darken-4">
+            <div class="nav-wrapper">
+                    <a href="#" class="brand-logo left" style="padding-left:20px;">University Election</a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="ad_city.aspx" class="active">City</a></li>
+                        <li><a href="ad_clg.aspx">College</a></li>
+                        <li><a href="ad_country_code.aspx">Country Code</a></li>
+                        <li><a href="ad_logout.aspx">Logout</a></li>
+                    </ul>
+                    <ul id="nav-mobile" class="right side-nav">
+                        <li><a href="ad_city.aspx" class="active">City</a></li>
+                        <li><a href="ad_clg.aspx">College</a></li>
+                        <li><a href="ad_country_code.aspx">Country Code</a></li>
+                        <li><a href="ad_logout.aspx">Logout</a></li>
+                    </ul>
+                <a data-activates="nav-mobile" class="button-collapse right"><i class="material-icons">menu</i></a>
+            </div>
+        </nav>
+    </div>
+    <div class="center">
+        <form id="form1" runat="server">
+            <br />
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+            <asp:UpdatePanel ID="UpdatePanel3" runat="server"><ContentTemplate>
+                <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+            </ContentTemplate></asp:UpdatePanel>
+        </form>
+    </div>
+</body>
+</html>
